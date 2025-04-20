@@ -10,6 +10,10 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: err.message || "Something went wrong" });
 });
 
+app.get("/", (req, res) => {
+  res.send("welcome to home page");
+});
+
 const startServer = async () => {
   try {
     await connectToDB();
